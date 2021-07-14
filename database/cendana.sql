@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 5.0.3
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 24 Feb 2017 pada 15.57
--- Versi Server: 10.1.13-MariaDB
--- PHP Version: 7.0.8
+-- Generation Time: Jul 14, 2021 at 03:40 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -23,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -35,7 +36,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`, `nama`, `foto`) VALUES
@@ -45,7 +46,7 @@ INSERT INTO `admin` (`id`, `username`, `password`, `nama`, `foto`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kelamin`
+-- Table structure for table `kelamin`
 --
 
 CREATE TABLE `kelamin` (
@@ -54,7 +55,7 @@ CREATE TABLE `kelamin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kelamin`
+-- Dumping data for table `kelamin`
 --
 
 INSERT INTO `kelamin` (`id`, `nama`) VALUES
@@ -64,7 +65,7 @@ INSERT INTO `kelamin` (`id`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kota`
+-- Table structure for table `kota`
 --
 
 CREATE TABLE `kota` (
@@ -73,7 +74,7 @@ CREATE TABLE `kota` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kota`
+-- Dumping data for table `kota`
 --
 
 INSERT INTO `kota` (`id`, `nama`) VALUES
@@ -87,7 +88,7 @@ INSERT INTO `kota` (`id`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pegawai`
+-- Table structure for table `pegawai`
 --
 
 CREATE TABLE `pegawai` (
@@ -101,11 +102,10 @@ CREATE TABLE `pegawai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `pegawai`
+-- Dumping data for table `pegawai`
 --
 
 INSERT INTO `pegawai` (`id`, `nama`, `telp`, `id_kota`, `id_kelamin`, `id_posisi`, `status`) VALUES
-('10', 'Antony Febriansyah Hartono', '082199568540', 1, 1, 1, 1),
 ('11', 'Hafizh Asrofil Al Banna', '087859615271', 1, 1, 1, 1),
 ('12', 'Faiq Fajrullah', '085736333728', 1, 1, 2, 1),
 ('3', 'Mustofa Halim', '081330493322', 1, 1, 3, 1),
@@ -120,7 +120,7 @@ INSERT INTO `pegawai` (`id`, `nama`, `telp`, `id_kota`, `id_kelamin`, `id_posisi
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `posisi`
+-- Table structure for table `posisi`
 --
 
 CREATE TABLE `posisi` (
@@ -129,7 +129,7 @@ CREATE TABLE `posisi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `posisi`
+-- Dumping data for table `posisi`
 --
 
 INSERT INTO `posisi` (`id`, `nama`) VALUES
@@ -138,6 +138,20 @@ INSERT INTO `posisi` (`id`, `nama`) VALUES
 (3, 'Keuangan'),
 (4, 'Produk'),
 (5, 'Web Developer');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `register_epress`
+--
+
+CREATE TABLE `register_epress` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(200) NOT NULL,
+  `nama_media` varchar(200) NOT NULL,
+  `no_hp` int(14) NOT NULL,
+  `password` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
@@ -168,6 +182,12 @@ ALTER TABLE `posisi`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `register_epress`
+--
+ALTER TABLE `register_epress`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -176,16 +196,26 @@ ALTER TABLE `posisi`
 --
 ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `kota`
 --
 ALTER TABLE `kota`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
 --
 -- AUTO_INCREMENT for table `posisi`
 --
 ALTER TABLE `posisi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `register_epress`
+--
+ALTER TABLE `register_epress`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
