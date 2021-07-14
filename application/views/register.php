@@ -36,7 +36,7 @@
           Register Your Account
         </p>
 
-        <form action="<?php echo base_url('Auth/login'); ?>" method="post">
+        <form action="<?php echo base_url('Auth/register'); ?>" method="post">
           <div class="form-group has-feedback">
             <input type="text" class="form-control" placeholder="Nama" name="username">
             <span class="glyphicon glyphicon-user form-control-feedback"></span>

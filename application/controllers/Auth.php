@@ -14,7 +14,7 @@ class Auth extends CI_Controller {
 			$this->load->view('login');
 		} else {
 			redirect('Home');
-		}
+		} 
 	}
 
 	public function login() {
@@ -42,6 +42,11 @@ class Auth extends CI_Controller {
 			$this->session->set_flashdata('error_msg', validation_errors());
 			redirect('Auth');
 		}
+	}
+
+	public function register(){
+		$this->load->view('register');
+		
 	}
 
 	public function logout() {
