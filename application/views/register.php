@@ -55,7 +55,7 @@
           </div>
          
         </form>
-        <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button></p>
+        <button type="submit" class="btn btn-primary btn-block btn-flat">submit</button></p>
         </form>
             
 
